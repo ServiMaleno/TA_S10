@@ -1,0 +1,27 @@
+﻿<Window x:Class="Presentacion.WindowCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentacion"
+        mc:Ignorable="d"
+        Title="Clientes" Height="390" Width="799" Background="#FF24F36C">
+    <Grid>
+        <Label Content="DNI:" HorizontalAlignment="Left" Margin="60,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="60,94,0,0" VerticalAlignment="Top"/>
+        <Label Content="Categoría:" HorizontalAlignment="Left" Margin="60,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.73,-0.416"/>
+        <TextBox x:Name="tbDNI" HorizontalAlignment="Left" Margin="153,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="22"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="153,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="22"/>
+        <ComboBox x:Name="cbCategoria" HorizontalAlignment="Left" Margin="153,144,0,0" VerticalAlignment="Top" Width="133">
+            <ComboBoxItem Content="Nuevo"/>
+            <ComboBoxItem Content="Ocasional"/>
+            <ComboBoxItem Content="Frecuente"/>
+        </ComboBox>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="60,217,0,0" VerticalAlignment="Top" Height="43" Width="98" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="180,217,0,0" VerticalAlignment="Top" Height="43" Width="106" Click="btnEliminar_Click"/>
+        <Button x:Name="btnOrdenar" Content="Ordenar" HorizontalAlignment="Left" Margin="60,284,0,0" VerticalAlignment="Top" Height="45" Width="98" Click="btnOrdenar_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="180,284,0,0" VerticalAlignment="Top" Height="45" Width="106" Click="btnSalir_Click"/>
+        <DataGrid x:Name="dgClientes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="327,46,63,45" SelectionChanged="dgClientes_SelectionChanged"/>
+
+    </Grid>
+</Window>
