@@ -28,5 +28,25 @@ namespace Datos
         {
             return clientes;
         }
+
+        public void Eliminar(string dni)
+        {
+            clientes.RemoveAll(delegate (ECliente c)
+            {
+                return c.DNI.Equals(dni);
+            });
+        }
+
+        public List<ECliente> OrdenarPorSueldo()
+        {
+            List<ECliente>clientesOrdenados = new List<ECliente>(clientes);
+
+            clientesOrdenados.Sort(delegate (ECliente e1, ECliente e2)
+            {
+                return e1.Crédito.CompareTo(e2.Crédito);
+            });
+
+            return clientesOrdenados;
+        }
     }
 }

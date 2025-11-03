@@ -70,12 +70,21 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
+            if(clienteSeleccionado == null)
+            {
+                MessageBox.Show("Seleccione un empleado");
+                return;
+            }
 
+            String dni = clienteSeleccionado.DNI;
+            nCliente.Eliminar(dni);
+
+            MostrarClientes(nCliente.ListarTodosLosClientes());
         }
 
         private void btnOrdenar_Click(object sender, RoutedEventArgs e)
         {
-
+            MostrarClientes(nCliente.ListarTodosLosClientes());
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)

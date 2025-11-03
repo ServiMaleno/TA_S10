@@ -37,5 +37,17 @@ namespace Negocio
         {
             return DCliente.ListarTodosLosClientes();
         }
+
+        //Definir el método para eliminar un cliente
+        public void Eliminar(String dni)
+        {
+            dCliente.Eliminar(dni);
+        }
+
+        //Definir el método para ordenar por sueldo a todos los clientes, que es una lista de ECliente
+        public List<ECliente> OrdenarPorSueldo()
+        {
+            return dCliente.OrdenarPorSueldo();
+        }
     }
 }
